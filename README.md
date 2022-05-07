@@ -11,7 +11,7 @@ Modifications are made in order to carry out the experiments.
 
 ### Datasets
 
-The paper uses MIMIC-III dataset, which requires the CITI training program in order to use it. Dataset_Split.ipynb is used to preprocess the split the datas
+The paper uses MIMIC-III(https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. Dataset_Split.ipynb is used to preprocess and split the dataset.
 
 
 ### Data split for 5-folder cross-validation:
@@ -32,4 +32,4 @@ File system expected:
       -2days
         -test.csv
 ```
-Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission).
+Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
