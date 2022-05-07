@@ -193,3 +193,13 @@ transformers-cli convert --model_type bert \
 /Users/kikibean/opt/anaconda3/envs/wian/bin/python ./train_lstm.py   --readmission_mode=discharge --output_dir=./lstm_discharge
 ```
 
+
+# Citation
+@article{clinicalbert,
+author = {Kexin Huang and Jaan Altosaar and Rajesh Ranganath},
+title = {ClinicalBERT: Modeling Clinical Notes and Predicting Hospital Readmission},
+year = {2019},
+journal = {arXiv:1904.05342},
+}
+
+
