@@ -131,7 +131,7 @@ transformers-cli convert --model_type bert \
   --do_train \
   --do_eval \
   --data_dir ./data/good_datasets/fold1/3days \
-  --bert_model ./pytorch_3days\
+  --bert_model ./model/pytorch_3days\
   --max_seq_length 512 \
   --train_batch_size 8\
   --output_dir ./result_early3
@@ -148,5 +148,5 @@ transformers-cli convert --model_type bert \
   --bert_model ./pytorch_discharge\
   --max_seq_length 512 \
   --train_batch_size 8\
-  --output_dir ./result_discharge
+  --output_dir ./model/result_discharge
 ```
