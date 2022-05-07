@@ -112,4 +112,13 @@ create_pretraining_data.ipynb
 
 ```
 
+### Converting tensorflow checkpoints to pytorch checkpoints
+```
+export BERT_BASE_DIR=./pretraining_output_discharge_fold12_512
+
+transformers-cli convert --model_type bert \
+  --tf_checkpoint $BERT_BASE_DIR/model.ckpt-50000 \
+  --config $BERT_BASE_DIR/bert_config.json \
+  --pytorch_dump_output $BERT_BASE_DIR/pytorch_model.bin
+```
 
