@@ -114,7 +114,7 @@ create_pretraining_data.ipynb
 
 ### Converting tensorflow checkpoints to pytorch checkpoints
 ```
-export BERT_BASE_DIR=./pretraining_output_discharge_fold12_512
+export BERT_BASE_DIR=./pytorch_discharge
 
 transformers-cli convert --model_type bert \
   --tf_checkpoint $BERT_BASE_DIR/model.ckpt-50000 \
@@ -122,3 +122,31 @@ transformers-cli convert --model_type bert \
   --pytorch_dump_output $BERT_BASE_DIR/pytorch_model.bin
 ```
 
+### Hospital Readmission using ClinicalBERT
+#### Early Notes Prediction
+```
+!python ./run_readmission_v2.py \
+  --task_name readmission \
+  --readmission_mode early \
+  --do_train \
+  --do_eval \
+  --data_dir ./data/good_datasets/fold1/3days \
+  --bert_model ./pytorch_3days\
+  --max_seq_length 512 \
+  --train_batch_size 8\
+  --output_dir ./result_early3
+```
+
+#### Discharge Summary Prediction
+```
+!python ./run_readmission_v2.py \
+  --task_name readmission \
+  --readmission_mode discharge \
+  --do_train \
+  --do_eval \
+  --data_dir ./data/good_datasets/fold1/discharge \
+  --bert_model ./pytorch_discharge\
+  --max_seq_length 512 \
+  --train_batch_size 8\
+  --output_dir ./result_discharge
+```
