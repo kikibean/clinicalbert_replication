@@ -7,11 +7,14 @@ Modifications are made in order to carry out the experiments.
 
 
 
-# clinicalBERT
 
-### Datasets
 
-The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the [CITI training program](https://eicu-crd.mit.edu/gettingstarted/access/) in order to use it. preprocess.ipynb is used to preprocess and merge data from admission information and clinical notes, Dataset_Split.ipynb is used to split the dataset for 5-folder cross-validation.
+# Datasets
+
+The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the [CITI training program](https://eicu-crd.mit.edu/gettingstarted/access/) in order to use it. 
+
+## Preprocessing
+preprocess.ipynb is used to preprocess and merge data from admission information and clinical notes, Dataset_Split.ipynb is used to split the dataset for 5-fold cross-validation.
 
 
 ### Data split for 5-folder cross-validation:
@@ -31,8 +34,9 @@ File system expected:
       -2days
         -test.csv
 ```
-Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
+Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/.
 
+# clinicalBERT
 ### Pre-training from BERT-Base checkpoints
 Mainly used modified code from [BERT repo](https://github.com/google-research/bert).
 
