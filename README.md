@@ -34,7 +34,8 @@ File system expected:
 Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
 
 ### Pre-training from BERT checkpoints
-Mainly used modified code from [BERT repo]{https://github.com/google-research/bert}
+Mainly used modified code from [BERT repo](https://github.com/google-research/bert)
+
 File system expected:
 ```
 -INITIAL_DATA_PATH (for BERT config file, initial checkpoints, etc)
@@ -42,26 +43,72 @@ File system expected:
 -PRETRAIN_DATA_PATH (to store pre-training tensorflow records)
 -PRETRAINED_MODEL_PATH (to save pre-trained model checkpoints)
 ```
+
 ```
-#convert data to tensorflow record
+#convert data to tensorflow record, data is split into 2 parts because of Out-of-Memory issues.
 create_pretraining_data.ipynb
 
-#
+#First pre-trained using a maximum sequence length of 128 for 100000 iterations.
  %tensorflow_version 1.x
 !python ./run_pretraining.py \
---input_file ./PRETRAIN_DATA_PATH/tf_examples_128_fold12.tfrecord \
---output_dir ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12 \
+--input_file ./PRETRAIN_DATA_PATH/tf_examples_128_fold11.tfrecord \
+--output_dir ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold11_128 \
 --do_train \
 --do_eval \
 --bert_config_file ./INITIAL_DATA_PATH/bert_config.json \
---init_checkpoint ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12/model.ckpt-50000  \
+--init_checkpoint ./INITIAL_DATA_PATH/bert_model.ckpt  \
 --train_batch_size 64 \
 --max_seq_length 128 \
 --max_predictions_per_seq 20 \
---num_train_steps 10000 \
+--num_train_steps 50000 \
 --num_warmup_steps 10 \
 --learning_rate 2e-5 \
 
+ %tensorflow_version 1.x
+!python ./run_pretraining.py \
+--input_file ./PRETRAIN_DATA_PATH/tf_examples_128_fold12.tfrecord \
+--output_dir ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12_128 \
+--do_train \
+--do_eval \
+--bert_config_file ./INITIAL_DATA_PATH/bert_config.json \
+--init_checkpoint ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold11_128/bert_model.ckpt-50000  \
+--train_batch_size 64 \
+--max_seq_length 128 \
+--max_predictions_per_seq 20 \
+--num_train_steps 50000 \
+--num_warmup_steps 10 \
+--learning_rate 2e-5 \
+
+# Then further pretrain 100000 steps on the max seq length of 512
+# NOTE: the init_checkpoint should switch to the 128 pretrained model
+
+!python  ./run_pretraining.py \
+  --input_file=PRETRAIN_DATA_PATH/tf_examples_512_fold11.tfrecord \
+  --output_dir=PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold11_512 \
+  --do_train=True \
+  --do_eval=True \
+  --bert_config_file=INITIAL_DATA_PATH/bert_config.json \
+  --init_checkpoint=PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12_128/model.ckpt-50000 \
+  --train_batch_size=8 \
+  --max_seq_length=512 \
+  --max_predictions_per_seq=76 \
+  --num_train_steps=100000 \
+  --num_warmup_steps=10 \
+  --learning_rate=2e-5
+  
+  !python  ./run_pretraining.py \
+  --input_file=PRETRAIN_DATA_PATH/tf_examples_512_fold12.tfrecord \
+  --output_dir=PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12_512 \
+  --do_train=True \
+  --do_eval=True \
+  --bert_config_file=INITIAL_DATA_PATH/bert_config.json \
+  --init_checkpoint=PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold11_512/model.ckpt-50000 \
+  --train_batch_size=8 \
+  --max_seq_length=512 \
+  --max_predictions_per_seq=76 \
+  --num_train_steps=50000 \
+  --num_warmup_steps=10 \
+  --learning_rate=2e-5
 
 ```
 
