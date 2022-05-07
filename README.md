@@ -11,7 +11,7 @@ Modifications are made in order to carry out the experiments.
 
 ### Datasets
 
-The paper uses MIMIC-III(https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. Dataset_Split.ipynb is used to preprocess and split the dataset.
+The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. Dataset_Split.ipynb is used to preprocess and split the dataset.
 
 
 ### Data split for 5-folder cross-validation:
