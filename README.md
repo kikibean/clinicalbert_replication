@@ -194,12 +194,12 @@ pip install pytorch-pretrained-bert
 ## 2.Bag-of-Words training and Evaluation
 
 ```
-/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_bow.py   --readmission_mode=discharge --output_dir=./bow_discharge
+/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_bow.py  --data_dir=fold1 --readmission_mode=discharge --output_dir=./bow_discharge
 ```
 
 ## 3.BI-LSTM training and Evaluation
 ```
-/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_lstm.py   --readmission_mode=discharge --output_dir=./lstm_discharge
+/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_lstm.py  --date_dir=fold1 --readmission_mode=discharge --output_dir=./lstm_discharge
 ```
 
 # Result
