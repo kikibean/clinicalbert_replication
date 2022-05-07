@@ -121,6 +121,11 @@ transformers-cli convert --model_type bert \
   --config $BERT_BASE_DIR/bert_config.json \
   --pytorch_dump_output $BERT_BASE_DIR/pytorch_model.bin
 ```
+### Dependecies
+```
+pip install funcsigs
+pip install pytorch-pretrained-bert
+```
 
 ### Hospital Readmission using ClinicalBERT
 #### Early Notes Prediction
