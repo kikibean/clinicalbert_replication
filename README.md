@@ -7,4 +7,22 @@ Modifications are made in order to carry out the experiments.
 
 
 
-clinicalBERT
+## clinicalBERT
+
+### Data split for 5-folder cross-validation:
+notebooks/Dataset_Split.ipynb
+
+File system expected:
+-data
+  -good_datasets
+    -fold1
+      -discharge
+        -train.csv
+        -val.csv
+        -test.csv
+      -3days
+        -train.csv
+        -val.csv
+        -test.csv
+      -2days
+        -test.csv
