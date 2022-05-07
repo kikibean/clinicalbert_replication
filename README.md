@@ -125,14 +125,14 @@ transformers-cli convert --model_type bert \
   --config $BERT_BASE_DIR/bert_config.json \
   --pytorch_dump_output $BERT_BASE_DIR/pytorch_model.bin
 ```
-### Dependecies
+### Dependencies
 ```
 pip install funcsigs
 pip install pytorch-pretrained-bert
 ```
 
-### Hospital Readmission using ClinicalBERT
-#### Early Notes Prediction
+### Hospital Readmission Fine-tuning and Evaluation using ClinicalBERT
+#### Early Notes Fine-tuning and Prediction
 ```
 !python ./run_readmission_v2.py \
   --task_name readmission \
@@ -146,7 +146,7 @@ pip install pytorch-pretrained-bert
   --output_dir ./result_pytorch_early3
 ```
 
-#### Discharge Summary Prediction
+#### Discharge Summary Fine-tuning and Prediction
 ```
 !python ./run_readmission_v2.py \
   --task_name readmission \
@@ -161,7 +161,7 @@ pip install pytorch-pretrained-bert
 ```
 # Baselines
 ## 1. BERT-Base
-#### Early Notes Prediction
+#### Early Notes Fine-tuning and Prediction
 ```
 !python ./run_readmission_v2.py \
   --task_name readmission \
@@ -175,7 +175,7 @@ pip install pytorch-pretrained-bert
   --output_dir ./result_bert_early3
 ```
 
-#### Discharge Summary Prediction
+#### Discharge Summary Fine-tuning and Prediction
 ```
 !python ./run_readmission_v2.py \
   --task_name readmission \
@@ -191,13 +191,13 @@ pip install pytorch-pretrained-bert
 
 
 
-## 2.Bag-of-Words 
+## 2.Bag-of-Words training and Evaluation
 
 ```
 /Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_bow.py   --readmission_mode=discharge --output_dir=./bow_discharge
 ```
 
-## 3.BI-LSTM
+## 3.BI-LSTM training and Evaluation
 ```
 /Users/kikibean/opt/anaconda3/envs/wian/bin/python ./wian/code/train_lstm.py   --readmission_mode=discharge --output_dir=./lstm_discharge
 ```
