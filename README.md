@@ -34,7 +34,7 @@ File system expected:
 Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
 
 ### Pre-training from BERT checkpoints
-Mainly used modified code from [BERT repo](https://github.com/google-research/bert)
+Mainly used modified code from [BERT repo](https://github.com/google-research/bert).
 
 File system expected:
 ```
