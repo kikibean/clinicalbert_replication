@@ -193,7 +193,9 @@ transformers-cli convert --model_type bert \
 /Users/kikibean/opt/anaconda3/envs/wian/bin/python ./train_lstm.py   --readmission_mode=discharge --output_dir=./lstm_discharge
 ```
 
-## References
+# Result
+
+
 # Citation
 @article{clinicalbert,
 author = {Kexin Huang and Jaan Altosaar and Rajesh Ranganath},
