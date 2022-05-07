@@ -9,12 +9,12 @@ Modifications are made in order to carry out the experiments.
 
 # clinicalBERT
 
-## Datasets
+### Datasets
 
-The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. preprocess.ipynb is used to preprocess the data and Dataset_Split.ipynb is used to split the dataset.
+The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. preprocess.ipynb is used to preprocess and merge data from admission information and clinical notes, Dataset_Split.ipynb is used to split the dataset for 5-folder cross-validation.
 
 
-## Data split for 5-folder cross-validation:
+### Data split for 5-folder cross-validation:
 File system expected:
 ```
 -data
@@ -33,6 +33,36 @@ File system expected:
 ```
 Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
 
-## Pre-training
+### Pre-training from BERT checkpoints
+Mainly used modified code from [BERT repo]{https://github.com/google-research/bert}
+File system expected:
+```
+-INITIAL_DATA_PATH (for BERT config file, initial checkpoints, etc)
+-INITIAL_MODEL_PATH (for BERT vocab.txt)
+-PRETRAIN_DATA_PATH (to store pre-training tensorflow records)
+-PRETRAINED_MODEL_PATH (to save pre-trained model checkpoints)
+```
+```
+#convert data to tensorflow record
+create_pretraining_data.ipynb
+
+#
+ %tensorflow_version 1.x
+!python ./run_pretraining.py \
+--input_file ./PRETRAIN_DATA_PATH/tf_examples_128_fold12.tfrecord \
+--output_dir ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12 \
+--do_train \
+--do_eval \
+--bert_config_file ./INITIAL_DATA_PATH/bert_config.json \
+--init_checkpoint ./PRETRAINED_MODEL_PATH/pretraining_output_discharge_fold12/model.ckpt-50000  \
+--train_batch_size 64 \
+--max_seq_length 128 \
+--max_predictions_per_seq 20 \
+--num_train_steps 10000 \
+--num_warmup_steps 10 \
+--learning_rate 2e-5 \
+
+
+```
 
 
