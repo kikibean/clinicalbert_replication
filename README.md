@@ -150,8 +150,8 @@ transformers-cli convert --model_type bert \
   --train_batch_size 8\
   --output_dir ./result_pytorch_discharge
 ```
-
-### Hospital Readmission using BERT-Base
+# Baselines
+## 1. BERT-Base
 #### Early Notes Prediction
 ```
 !python ./run_readmission_v2.py \
@@ -179,3 +179,17 @@ transformers-cli convert --model_type bert \
   --train_batch_size 8\
   --output_dir ./result_bert_discharge
 ```
+
+
+
+## 2.Bag-of-Words 
+
+```
+/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./train_bow.py   --readmission_mode=discharge --output_dir=./bow_discharge
+```
+
+## 3.BI-LSTM
+```
+/Users/kikibean/opt/anaconda3/envs/wian/bin/python ./train_lstm.py   --readmission_mode=discharge --output_dir=./lstm_discharge
+```
+
