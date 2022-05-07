@@ -7,14 +7,14 @@ Modifications are made in order to carry out the experiments.
 
 
 
-## clinicalBERT
+# clinicalBERT
 
-### Datasets
+## Datasets
 
 The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the CITI training program in order to use it. preprocess.ipynb is used to preprocess the data and Dataset_Split.ipynb is used to split the dataset.
 
 
-### Data split for 5-folder cross-validation:
+## Data split for 5-folder cross-validation:
 File system expected:
 ```
 -data
@@ -32,4 +32,7 @@ File system expected:
         -test.csv
 ```
 Data file is expected to have column "TEXT", "ID" and "Label" (Note chunks, Admission ID, Label of readmission) as in data/good_datasets/fold1/. TEXT field is blanked out.
+
+## Pre-training
+
 
