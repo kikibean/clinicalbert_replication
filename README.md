@@ -96,7 +96,7 @@ create_pretraining_data.ipynb
   --train_batch_size=8 \
   --max_seq_length=512 \
   --max_predictions_per_seq=76 \
-  --num_train_steps=100000 \
+  --num_train_steps=50000 \
   --num_warmup_steps=10 \
   --learning_rate=2e-5
   
