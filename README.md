@@ -134,7 +134,7 @@ transformers-cli convert --model_type bert \
   --bert_model ./model/pytorch_3days\
   --max_seq_length 512 \
   --train_batch_size 8\
-  --output_dir ./result_early3
+  --output_dir ./result_pytorch_early3
 ```
 
 #### Discharge Summary Prediction
@@ -145,8 +145,37 @@ transformers-cli convert --model_type bert \
   --do_train \
   --do_eval \
   --data_dir ./data/good_datasets/fold1/discharge \
-  --bert_model ./pytorch_discharge\
+  --bert_model ./model/pytorch_discharge\
   --max_seq_length 512 \
   --train_batch_size 8\
-  --output_dir ./model/result_discharge
+  --output_dir ./result_pytorch_discharge
+```
+
+### Hospital Readmission using BERT-Base
+#### Early Notes Prediction
+```
+!python ./run_readmission_v2.py \
+  --task_name readmission \
+  --readmission_mode early \
+  --do_train \
+  --do_eval \
+  --data_dir ./data/good_datasets/fold1/3days \
+  --bert_model ./model/bert_base\
+  --max_seq_length 512 \
+  --train_batch_size 8\
+  --output_dir ./result_bert_early3
+```
+
+#### Discharge Summary Prediction
+```
+!python ./run_readmission_v2.py \
+  --task_name readmission \
+  --readmission_mode discharge \
+  --do_train \
+  --do_eval \
+  --data_dir ./data/good_datasets/fold1/discharge \
+  --bert_model ./model/bert_base\
+  --max_seq_length 512 \
+  --train_batch_size 8\
+  --output_dir ./result_bert_discharge
 ```
