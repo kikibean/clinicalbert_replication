@@ -208,7 +208,7 @@ pip install pytorch-pretrained-bert
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.73|0.71|0.22|
 |BERT|0.71|0.66|0.09|
-|BoW||||
+|BoW|0.64|0.63|0.06|
 |BI-LSTM|0.66|0.66|0.13|
 
 ### Result at discharge replicated using author pretrained checkpoints
@@ -216,17 +216,28 @@ pip install pytorch-pretrained-bert
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.85±0.03|0.83±0.05|0.68±0.23|
 
+### Result at discharge replicated using author fine-tuned checkpoints
+| Model|AUROC|AUPRC|RP80               | 
+| -----|------ | ------|------- |
+| ClinicalBERT  |0.84±0.04|0.81±0.04|0.60±0.28|
+
+
 ### Result at 3days replicated from scratch
 | Model|AUROC|AUPRC|RP80               | 
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.69|0.69|0.13|
 |BERT|0.66|0.66|0.09|
-|BoW||||
-|BI-LSTM|0.66|0.66|0.13|
+|BoW|0.60|0.59|0.04|
+|BI-LSTM|0.54|0.56|0.02|
 ### Result at 3days replicated using author pretrained checkpoints
 | Model|AUROC|AUPRC|RP80               | 
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.78±0.04|0.78±0.04|0.47±0.12|
+
+### Result at 3days replicated using author fine-tuned checkpoints
+| Model|AUROC|AUPRC|RP80               | 
+| -----|------ | ------|------- |
+| ClinicalBERT  |0.77±0.04|0.78±0.05|0.37±0.31|
 # Citation
 @article{clinicalbert,
 author = {Kexin Huang and Jaan Altosaar and Rajesh Ranganath},
