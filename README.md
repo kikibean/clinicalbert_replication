@@ -239,11 +239,52 @@ pip install pytorch-pretrained-bert
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.77±0.04|0.78±0.05|0.37±0.31|
 # Citation
+```
+
 @article{clinicalbert,
 author = {Kexin Huang and Jaan Altosaar and Rajesh Ranganath},
 title = {ClinicalBERT: Modeling Clinical Notes and Predicting Hospital Readmission},
 year = {2019},
-journal = {arXiv:1904.05342},
+url={https://arxiv.org/pdf/1904.05342.pdf},
+journal = {arXiv:1904.05342}
 }
+
+
+
+@article{bert,
+  title={Bert: Pre-training of deep bidirectional transformers for language understanding},
+  author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  journal={arXiv preprint arXiv:1810.04805},
+  url={https://arxiv.org/pdf/1810.04805.pdf},
+  year={2018}
+}
+
+
+
+@article{bow_bilstm,
+  title={What’s in a Note? Unpacking Predictive Value in Clinical Note
+Representations},
+  author={Willie Boag,
+, Dustin Doss,
+, Tristan Naumann,
+, Peter Szolovits},
+  url={https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5961801/pdf/2840866.pdf},
+  year={2018}
+}
+
+
+@article{mimic,
+  title={The MIMIC Code Repository: enabling reproducibility in critical care research},
+  author={Johnson, Alistair E W and Stone, David J and Celi, Leo A and Pollard, Tom J},
+  journal={Journal of the American Medical Informatics Association},
+  volume={25},
+  number={1},
+  pages={32--39},
+  year={2018},
+  publisher={Oxford University Press}
+}
+
+
+```
 
 
