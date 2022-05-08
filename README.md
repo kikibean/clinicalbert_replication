@@ -205,7 +205,7 @@ pip install pytorch-pretrained-bert
 # Result
 ### Result at discharge replicated from scratch
 | Model|AUROC|AUPRC|RP80               | 
-| ------------- | ------------- |
+| -----|------ | ------|------- |
 | ClinicalBERT  |0.73|0.71|0.22|
 |BERT|0.71|0.66|0.09|
 |BoW||||
