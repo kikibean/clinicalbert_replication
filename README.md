@@ -204,7 +204,7 @@ pip install pytorch-pretrained-bert
 
 # Result
 
-| First Header  | |
+| First Header                  | 
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
