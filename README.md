@@ -238,7 +238,7 @@ pip install pytorch-pretrained-bert
 
 
 # Replicated pre-trained and fine-tuned checkpoints
-Replicated pre-trained and fine-tuned checkpoints can be found [here](https://drive.google.com/drive/folders/1brt-Zgw5pVTp5sqecJntRP3SPrYp1pvh?usp=sharing).
+Replicated pre-trained and fine-tuned checkpoints can be found [here](https://drive.google.com/drive/folders/1guCyjffK-3YbVJrO39rHpl3GyoXeaquy?usp=sharing).
 # Citation
 ```
 
