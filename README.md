@@ -223,7 +223,10 @@ pip install pytorch-pretrained-bert
 |BERT|0.66|0.66|0.09|
 |BoW||||
 |BI-LSTM|0.66|0.66|0.13|
-
+### Result at 3days replicated using author pretrained checkpoints
+| Model|AUROC|AUPRC|RP80               | 
+| -----|------ | ------|------- |
+| ClinicalBERT  |0.78±0.04|0.78±0.04|0.47±0.12|
 # Citation
 @article{clinicalbert,
 author = {Kexin Huang and Jaan Altosaar and Rajesh Ranganath},
