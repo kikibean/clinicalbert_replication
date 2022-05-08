@@ -204,6 +204,10 @@ pip install pytorch-pretrained-bert
 
 # Result
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 # Citation
 @article{clinicalbert,
