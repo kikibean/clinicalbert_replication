@@ -6,9 +6,6 @@ In addition to that, this repo also tries to replicate the baseline models inclu
 Modifications are made in order to carry out the experiments.
 
 
-
-
-
 # Datasets
 
 The paper uses [MIMIC-III](https://mimic.mit.edu/) dataset, which requires the [CITI training program](https://eicu-crd.mit.edu/gettingstarted/access/) in order to use it. 
@@ -241,7 +238,7 @@ pip install pytorch-pretrained-bert
 
 
 # Replicated pre-trained and fine-tuned checkpoints
-Replicated pre-trained and fine-tuned checkpoints can be found [here]{https://drive.google.com/drive/folders/1brt-Zgw5pVTp5sqecJntRP3SPrYp1pvh?usp=sharing}.
+Replicated pre-trained and fine-tuned checkpoints can be found [here](https://drive.google.com/drive/folders/1brt-Zgw5pVTp5sqecJntRP3SPrYp1pvh?usp=sharing).
 # Citation
 ```
 
