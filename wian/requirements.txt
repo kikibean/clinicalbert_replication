@@ -1,0 +1,9 @@
+psycopg2-binary
+numpy
+pandas
+scikit-learn
+scipy
+keras
+tensorflow==1.4
+h5py
+keras==1.0.4
