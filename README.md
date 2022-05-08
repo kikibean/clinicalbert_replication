@@ -214,7 +214,7 @@ pip install pytorch-pretrained-bert
 ### Result at discharge replicated using author pretrained checkpoints
 | Model|AUROC|AUPRC|RP80               | 
 | -----|------ | ------|------- |
-| ClinicalBERT  |0.85+=0.03|0.83+=0.05|0.68+=0.23|
+| ClinicalBERT  |0.85±0.03|0.83±0.05|0.68±0.23|
 
 ### Result at 3days replicated from scratch
 | Model|AUROC|AUPRC|RP80               | 
