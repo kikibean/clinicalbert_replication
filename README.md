@@ -19,7 +19,18 @@ File system expected:
 ```
 -data
   -good_datasets
-    -fold1
+    -fold1 
+      -discharge 
+        -train.csv (80% of the total data)
+        -val.csv (10% of the total data)
+        -test.csv (10% of the total data)
+      -3days
+        -train.csv
+        -val.csv
+        -test.csv
+      -2days
+        -test.csv
+    -fold2
       -discharge
         -train.csv
         -val.csv
