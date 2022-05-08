@@ -203,11 +203,13 @@ pip install pytorch-pretrained-bert
 ```
 
 # Result
-
-| > |First Header               | 
+### Result at discharge replicated from scratch
+| Model|AUROC|AUPRC|RP80               | 
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| ClinicalBERT  |0.73|0.71|0.22|
+|BERT|0.71|0.66|0.09|
+|BoW||||
+|BI-LSTM|0.66|0.66|0.13|
 
 # Citation
 @article{clinicalbert,
