@@ -238,6 +238,10 @@ pip install pytorch-pretrained-bert
 | Model|AUROC|AUPRC|RP80               | 
 | -----|------ | ------|------- |
 | ClinicalBERT  |0.77±0.04|0.78±0.05|0.37±0.31|
+
+
+# Replicated pre-trained and fine-tuned checkpoints
+Replicated pre-trained and fine-tuned checkpoints can be found [here]{https://drive.google.com/drive/folders/1brt-Zgw5pVTp5sqecJntRP3SPrYp1pvh?usp=sharing}.
 # Citation
 ```
 
